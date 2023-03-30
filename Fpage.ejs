@@ -1,0 +1,154 @@
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Informer</title>
+</head>
+<style>
+    *{
+        margin: 0px 0px;
+        
+    }
+    .Container{
+width: 1530px;
+height: 748px;
+
+    }
+    .Navbar{
+        display: flex;
+        border: 1px solid black;
+background-color: black;
+height: 110px;
+width: 1530px;
+    
+}
+
+#search{
+    
+    margin-left: 350px;
+     /* width: 500px; */
+     height: 50px;  
+     margin-top:25px; 
+     border-right: 5px solid white;
+    /*background-color:#727272 ;
+    border-radius: 20px;
+    border: 1px solid white; */
+    color:whitesmoke;
+    font-size: 50px;
+}
+#about_us{
+    position:fixed;
+    display: flex;
+    align-items: flex-end;
+    justify-content: end;
+    margin-top: 27px;
+    color: aliceblue;
+    font-size: 40px;
+ margin-left: 1300px;
+
+}
+::placeholder{
+    color: aliceblue;
+    font-size:20px;
+    padding-left: 20px;
+    padding-top: 90px;
+    font-weight: bold;
+}
+ td,th {
+  border: 1px solid black;
+  padding: 5px;
+}   
+table{
+    width: 100%;
+}
+
+ #sr,#id,#name,#topic,#know{
+    font-size: 25px;
+ }
+
+
+#btn{
+    width: 90px;
+    height: 35px;
+    border-radius: 10px;
+    
+    color: aliceblue;
+}
+th{
+    font-size: 20px;
+}
+#img{
+    
+    margin-left: 25px;
+    height: 100px;
+    width: 170px;
+}
+*{
+    text-decoration: none;
+}
+#a{
+    color: black;
+}
+#search1{
+    margin-left: 20px;
+    color: aliceblue;
+}
+#body2{
+    z-index: 500;
+}
+
+</style>
+<body>
+    <div class="Container">
+            <div class="Navbar">
+                   <img id="img" src="Fpage.png">
+                    <!-- <input type="text" id="search" placeholder="Search"> -->
+                    <span class="auto-type" id="search"></span>
+                    <div id="about_us" ><a id="search1" href="about_us.html">About Us</a></div>
+            </div>
+<div class="body2">
+        <table>
+            <tr>
+                <th id="sr">Sr No</th>
+                <th id="id">ID NO</th>
+                <th id="name">Name</th>
+                <th id="area">Project Defination</th>
+                <th id="area">Project Link</th>
+                <th id="topic">Technology used in Project</th>
+                <th id="know">Know More</th>
+              </tr>
+<tr>
+                 <% var i =0 %>
+                 <% employeelist.forEach(datadetail =>{ %>
+               <tr>
+                <% ++i %>
+                <th><%= i %></th>
+                <th><%= datadetail.id %></th>
+                <th><%= datadetail.Name %></th>
+                <th><%= datadetail.speciality %></th>
+                <th><%= datadetail.devlopment %></th>
+                <th><%= datadetail.topics%></th>
+                
+              <th> <button id="btn"><a id="a" href="completeinfo">Know More</button></th>
+            </tr>
+                <%})%>
+</tr>
+
+        </table>
+    
+    </div>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+<script>var typed = new Typed(" .auto-type",{
+    strings : ["Welcome To Informer" , "Explore Different Projects"],
+    typeSpeed : 100,
+    backSpeed : 100,
+    loop : true
+})
+</script>
+</body>
+</html>
